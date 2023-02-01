@@ -1,0 +1,61 @@
+Magic 271485
+Revision Verdi_O-2018.09-SP2
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort -10 20 1914 831 169 65
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "/home/rfic/Desktop/FIR_Filter/sim/fir_tb.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 5
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 0.000000 20901950.000000
+cursor 1045000.000000
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name color linestyle
+; visible top row signal index
+top 0
+; marker line index
+markerPos 7
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "G1"
+activeDirFile "" "/home/rfic/Desktop/FIR_Filter/sim/fir_tb.fsdb"
+addSignal -h 15 /fir_tb/rst_n
+addSignal -h 15 -holdScope clk
+addSignal -h 15 -holdScope coeff_valid
+addSignal -h 15 -2COMP -HEX -holdScope fir_in[15:0]
+addSignal -w analog -ds pwc -h 52 -2COMP -HEX -holdScope fir_in[15:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope fir_out[71:0]
+addSignal -w analog -ds pwc -h 98 -2COMP -HEX -holdScope fir_out[72:0]
+addGroup "G2"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+
